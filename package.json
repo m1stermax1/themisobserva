@@ -1,0 +1,27 @@
+{
+  "name": "themisobserva",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m1stermax1/themisobserva.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/m1stermax1/themisobserva/issues"
+  },
+  "homepage": "https://github.com/m1stermax1/themisobserva#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "handlebars": "^4.7.8",
+    "node": "^21.6.1",
+    "nodemon": "^3.0.3"
+  }
+}
