@@ -1,12 +1,14 @@
 import express from "express";
-import handlebars from 'handlebars';
+import handlebars from 'express-handlebars';
 import __dirname from "./utils.js";
 import viewRouter from './routes/views.router.js'
 
-
+ 
 const app = express();
 const PORT = process.env.PORT || 8080; 
-const server = app.listen(PORT, ()=> {loggers.info(`Conectado al puerto ${PORT}`)})
+const server = app.listen(PORT, ()=> {
+    console.log(`Conectado al puerto ${PORT}`)
+})
 
 app.engine('handlebars',handlebars.engine());
 app.set('view engine','handlebars');
