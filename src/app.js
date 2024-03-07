@@ -1,18 +1,8 @@
-import express from "express";
-import handlebars from 'express-handlebars';
-import __dirname from "./utils.js";
-import viewRouter from './routes/views.router.js'
-
- 
+const express = require("express");
 const app = express();
-const PORT = process.env.PORT || 8080; 
-const server = app.listen(PORT, ()=> {
-    console.log(`Conectado al puerto ${PORT}`)
-})
 
-app.engine('handlebars',handlebars.engine());
-app.set('view engine','handlebars');
-app.set('views',__dirname+'/views')
-app.use(express.static(__dirname+'/public'))
+app.get("/", (req, res) => res.send("Express on Vercel"));
 
-app.use('/', viewRouter); 
+app.listen(3000, () => console.log("Server ready on port 3000."));
+
+module.exports = app;
