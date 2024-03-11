@@ -9,30 +9,24 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: #e3edf8;
 
-  --primary-glow: conic-gradient(
-    from 180deg at 50% 50%,
-    #16abff33 0deg,
-    #0885ff33 55deg,
-    #54d6ff33 120deg,
-    #0071ff33 160deg,
-    transparent 360deg
-  );
-  --secondary-glow: radial-gradient(
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0)
-  );
+  --primary-glow: conic-gradient(from 180deg at 50% 50%,
+      #16abff33 0deg,
+      #0885ff33 55deg,
+      #54d6ff33 120deg,
+      #0071ff33 160deg,
+      transparent 360deg);
+  --secondary-glow: radial-gradient(rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0));
 
   --tile-start-rgb: 239, 245, 249;
   --tile-end-rgb: 228, 232, 233;
-  --tile-border: conic-gradient(
-    #00000080,
-    #00000040,
-    #00000030,
-    #00000020,
-    #00000010,
-    #00000010,
-    #00000080
-  );
+  --tile-border: conic-gradient(#00000080,
+      #00000040,
+      #00000030,
+      #00000020,
+      #00000010,
+      #00000010,
+      #00000080);
 
   --callout-rgb: 238, 240, 241;
   --callout-border-rgb: 172, 175, 176;
@@ -47,24 +41,20 @@
     --background-end-rgb: 0, 0, 0;
 
     --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
-    --secondary-glow: linear-gradient(
-      to bottom right,
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0.3)
-    );
+    --secondary-glow: linear-gradient(to bottom right,
+        rgba(1, 65, 255, 0),
+        rgba(1, 65, 255, 0),
+        rgba(1, 65, 255, 0.3));
 
     --tile-start-rgb: 2, 13, 46;
     --tile-end-rgb: 2, 5, 19;
-    --tile-border: conic-gradient(
-      #ffffff80,
-      #ffffff40,
-      #ffffff30,
-      #ffffff20,
-      #ffffff10,
-      #ffffff10,
-      #ffffff80
-    );
+    --tile-border: conic-gradient(#ffffff80,
+        #ffffff40,
+        #ffffff30,
+        #ffffff20,
+        #ffffff10,
+        #ffffff10,
+        #ffffff80);
 
     --callout-rgb: 20, 20, 20;
     --callout-border-rgb: 108, 108, 108;
@@ -87,12 +77,9 @@ body {
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(229,229,230, 1)
-    )
-    rgb(var(--background-start-rgb));
+      rgb(229, 229, 230, 1)) rgb(var(--background-start-rgb));
 }
 
 a {
@@ -110,11 +97,12 @@ header {
   display: grid;
   grid-template-columns: max-content 1fr 10%;
   place-items: center;
+  padding: 2rem;
 }
 
 main {
+  display: grid;
   margin: 1rem;
-  padding: 2rem;
   border-radius: 2rem;
   background: white;
 }
@@ -127,7 +115,7 @@ main {
   place-items: center start;
 }
 
-.brand > p {
+.brand>p {
   font-weight: bold;
 }
 
@@ -138,7 +126,7 @@ main {
   place-self: center end;
 }
 
-.menu > li {
+.menu>li {
   list-style: none;
   text-transform: capitalize;
 }
@@ -158,5 +146,308 @@ main {
   background-color: #0095f2;
   border: none;
   color: white;
+}
+
+.presentation {
+  display: grid;
+  position: relative;
+  height: 530px;
+  padding: 3rem;
+  place-content: center start;
+  gap: 2rem;
+  margin: 0 2rem;
+}
+
+.presentation>h1,
+.presentation>p,
+.presentation>.navigation {
+  z-index: 1;
+}
+
+.presentation h1 {
+  font-size: clamp(15px, 3vw, 40px);
+  width: 53%;
+  color: white;
+  text-transform: uppercase;
+}
+
+.presentation>p {
+  width: 30%;
+  color: white;
+  font-size: clamp(15px, 3vw, 18px);
+}
+
+.presentation>.navigation {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  width: 30vw;
+  background: #3d3f3fd4;
+  padding: 1rem;
+  border-radius: 1rem;
+  column-gap: 15px;
+}
+
+.presentation>.navigation>.container {
+  display: grid;
+  gap: 5px;
+  border-right: 2px solid white;
+}
+
+.presentation>.navigation>.container:last-child {
+  border-right: none;
+}
+
+.presentation>.navigation>.container>p {
+  font-size: 15px;
+  color: #00b0ff;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.presentation>.navigation>.container>button {
+  background: none;
+  border: none;
+  text-align: start;
+  color: white;
+}
+
+.aboute {
+  display: grid;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 55%, rgba(220, 224, 255, 1) 100%);
+  height: 500px;
+  place-content: center;
+  place-items: center;
+  gap: 2rem;
+}
+
+.aboute>h2 {
+  font-size: clamp(15px, 3vw, 40px);
+  text-transform: uppercase;
+}
+
+.aboute>p {
+  text-align: center;
+  width: 562px;
+}
+
+.aboute>button {
+  padding: 0.5rem 2rem;
+  border-radius: 10px;
+  background: #37b4f9;
+  color: white;
+  font-weight: bold;
+  border: none;
+}
+
+.aboute .title {
+  color: #03a9f4;
+}
+
+.aboute .subtitle {
+  font-weight: bold;
+}
+
+.proposalList {
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  place-content: space-evenly;
+}
+
+.ourProposals {
+  display: grid;
+  padding: 10rem 3rem 3rem;
+  gap: 3rem;
+  background: linear-gradient(0deg, rgba(255,255,255,1) 86%, rgba(220,224,255,1) 95%);
+}
+
+.ourProposals>h2 {
+  font-size: clamp(15px, 3vw, 40px);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.ourProposals .proposal {
+  display: grid;
+  position: relative;
+  width: 320px;
+  grid-template-rows: 140px 15px 1fr;
+  padding: 1rem 0.5rem;
+  box-shadow: 0 0 11px -8px black;
+  border-radius: 1rem;
+  place-items: center;
+}
+
+.ourProposals .proposal > .title {
+  grid-area: 2/1/3/2;
+  text-transform: uppercase;
+  font-size: 13px;
+  padding: 5px 1rem;
+  background: white;
+  border-radius: 0.4rem;
+  box-shadow: 0 0px 20px -10px black;
+  transform: translateY(-8px);
+  font-weight: bold;
+  color: #009af3;
+}
+
+.ourProposals .proposal > .subtitle {
+  grid-area: 3/1/4/2;
+  font-size: 12px;
+  text-align: center;
+  padding: 22px;
+}
+
+.participate {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr max-content 120px;
+  grid-template-rows: 90px 403px 80px;
+  min-height: 300px;
+  padding: 3rem 0;
+}
+
+.participate > .section {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 1) 55%, rgba(220, 224, 255, 1) 100%);
+  display: grid;
+  place-items: center start;
+  padding-left: 26rem;
+  grid-area: 2 / 1 / 3 / 4;
+}
+
+.participate > .section > .text > h2 {
+  text-transform: uppercase;
+  font-size: clamp(15px, 3vw, 40px);
+}
+
+.participate > .section > .text > p {  
+  font-size: clamp(15px, 3vw, 21px);
+  text-transform: uppercase;
+  width: 60%;
+  font-weight: bold;
+  color: #81878c;
+}
+
+.participate > .form > .input-label {
+  display: grid;
+  gap: 5px;
+}
+
+.participate > .form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+  grid-gap: 1rem;
+  gap: 1rem;
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 0 20px -12px black;
+  grid-area: 1 / 2 / 4 / 3;
+  place-content: space-around;
+  width: 500px;
+}
+
+.participate > .form > .input-label > label {
+  font-size: 13px;
+  color: lightgrey;
+}
+
+.participate > .form > .input-label > input {
+  height: 30px;
+  border: 1px solid lightgrey;
+  border-radius: 1rem;
+  font-weight: bold;
+  padding: 0 1rem;
+}
+
+.participate > .form > .input-label > input:focus {
+  border: 1px solid rgba(220, 224, 255, 1);
+  outline: unset;
+}
+
+.participate > .form > .input-label > textarea {
+  border: 1px solid lightgrey;
+  border-radius: 1rem;
+  height: 70px;
+  resize: none;
+}
+.participate > .form > .checkbox-label {
+  grid-area: auto / 1 / auto / 3;
+  display: grid;
+  grid-template-columns: 30px 1fr;
+}
+.participate > .form > .checkbox-label > label{
+  font-size: 12px;
+  font-weight: 300;
+  color: #a1a1a1;
+}
+.participate > .form > button{
+  width: 100%;
+  background-color: #03a9f4;
+  grid-area: auto / 1 / auto / 3;
+  border: none;
+  border-radius: 0.5rem;
+  height: 40px;
+  color: white;
+  font-weight: bolder;
+}
+
+footer {
+  padding: 4rem;
+}
+
+footer > .topSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+footer > .topSection > h2 {
+  grid-area: auto / 1 / auto / 2;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: clamp(15px, 3vw, 20px);
+  padding-left: 1rem;
+}
+
+footer > .topSection > .links {
+  grid-area: 1 / 2 / 4 / 3;
+  display: grid;
+  grid-auto-flow: column;
+}
+
+footer > .topSection > .links > .sectionLinks > p{
+  font-weight: bold;
+  color: #0098f3;
+}
+footer > .topSection > .links > .sectionLinks li {
+  list-style: none;
+  font-size: 12px;
+  font-weight: 300;
+}
+
+footer > .topSection > .links > .sectionLinks, footer > .topSection > .links > .sectionLinks > ul {
+  display: grid;
+  grid-template-rows: max-content 1fr;
+  gap: 10px;
+}
+
+footer > .bottomSection { 
+  display: grid;
+  grid-template-columns: max-content max-content 1fr;
+  grid-gap: 2rem;
+  gap: 2rem;
+  padding: 3rem 0;
+}
+
+footer > .bottomSection > p { 
+  font-size: 13px;
+}
+
+footer > .bottomSection > .redes { 
+  place-self: end;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 2rem;
 }
 
